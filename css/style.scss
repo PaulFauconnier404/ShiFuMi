@@ -1,0 +1,59 @@
+@import url('../font/Geogrotesque/stylesheet.css');
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../font/Montserrat-VariableFont_wght.ttf") format("ttf"),
+}
+
+//Les differentes variables couleurs
+$color_fond : #F8F8F8;
+$color_grey1 : #202020;
+$color_white : #FFFFFF;
+$color_blue1 : #C5DAFC;
+$color_blue2 : #3F84F5;
+$gradient : linear-gradient(70deg, #FF86B9, #867CD6);
+
+$valid_color:#0e8127;
+$no-valid_color: #ff3838;
+  
+//Les differentes variables font
+$font1: 'Montserrat', sans-serif;
+$font2: 'Geogrotesque Cyr', sans-serif;
+
+
+//Mixin Section
+@mixin section{
+    margin:0;
+    width:100%;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+// Si aucune valeur n'est précisée alors $justify vaut space-around
+@mixin flex($justify: space-around){
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $justify;
+  }
+
+
+//Déclaration des attributs de bases
+body{
+    margin:0;
+    position: relative;
+    height: max-content;
+}
+
+a{
+    text-decoration: none;
+    color: $color_grey1;
+}
+
+
+@import "scss/general_asset";
+@import "scss/main_page";
+@import "scss/pseudo_page";
+@import "scss/type_selection";
+@import "scss/setting";
+@import "scss/arcade_view";
+

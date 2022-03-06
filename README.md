@@ -8,5 +8,7 @@ In order to guarantee a natural and random result, the gesture detection is an i
 ## Context
 This is a project based from different OpenSource projects, and dedicated to our engineering school. 
 
+Maximum windows size supported is 500px
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

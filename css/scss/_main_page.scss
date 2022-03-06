@@ -1,0 +1,91 @@
+#first-page{
+    width:100%;
+    height:100vh;
+
+    @include flex(center);
+    flex-direction: column;
+    align-items: center ;
+
+    .cointainer-logotype{
+        width: 100%;
+        height:200px;
+        position: relative;
+        div{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-10%, -35%);
+
+            width: 70px;
+            height:70px;
+            border-radius: 100px;
+
+            background-color: $color_blue1;
+            box-shadow: 0 0 10px #AFAFAF;
+
+            @include flex(center);
+            align-items: center ;
+            font-size: 30px;
+
+            animation-name: loader1;
+            animation-duration: 1s;
+            
+        }
+        &::after, &::before{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            
+            width: 70px;
+            height:70px;
+            border-radius: 100px;
+
+            background-color: $color_blue1;
+            box-shadow: 0 0 10px #AFAFAF;
+
+            @include flex(center);
+            align-items: center ;
+            font-size: 30px;
+            animation-duration: 1s;
+        }
+        &::after{
+            content: '👊';
+            transform: translate(-50%, -90%);
+
+            animation-name: loader2;
+        } 
+        &::before{
+            content: '✌️';
+            transform: translate(-80%, -20%);
+
+            animation-name: loader3;
+        }
+        @include keyframefromto(loader1, translate(-50%, -50%), translate(-50%, -90%), translate(-10%, -35%));
+        @include keyframefromto(loader2, translate(-50%, -50%), translate(-80%, -20%), translate(-50%, -90%));
+        @include keyframefromto(loader3, translate(-50%, -50%), translate(-10%, -35%), translate(-80%, -20%));
+
+       
+    }
+
+    .container-title{
+        h1{
+            font-family: $font2;
+            font-size: 70px;
+            font-weight: 700;
+            color: $color_grey1;    
+            margin: 0;
+        }
+        p{
+            font-family: $font1;
+            font-size: 14px;
+            font-weight: 200;
+            color: $color_grey1;  
+            text-align: center;  
+            margin: 0;
+        }
+    }
+
+    .container-button{
+        @include blue_button;
+    }
+}

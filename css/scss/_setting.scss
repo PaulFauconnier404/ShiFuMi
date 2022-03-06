@@ -1,0 +1,117 @@
+#setting-page{
+    width:100%;
+    height:100vh;
+
+    position: relative;
+
+    @include flex(flex-start);
+    flex-direction: column;
+    align-items: center ;
+
+    .account-bubble{
+        position: relative;
+        width: 100%;
+        height: 50px;
+        div{
+            position: absolute;
+            top:0;
+            right: 30px;
+
+            margin-top: 30px;
+            width: 50px;
+            height:50px;
+            border-radius: 100px;
+
+            background-color: $color_blue1;
+            box-shadow: 0 0 10px #AFAFAF;
+
+            @include flex(center);
+            align-items: center ;
+
+            p{
+                font-family: $font1;
+                font-size: 30px;
+                font-weight: 500;
+                color: $color_blue2;    
+                width: max-content;
+                margin: 0;
+            }
+        }
+    }
+
+    .return-button{
+        font-family: $font1;
+        font-size: 15px;
+        font-weight:500;
+        color: $color_grey1; 
+        margin:0 0 40px 40px;
+    }
+
+    .app-title{
+        @include title_app;
+    }
+   
+    .container-reglage{
+        width: 100%;
+        margin-top: 50px;
+        .reglage{
+            width: 80%;
+            margin: 0 10%;
+
+            p{
+                font-family: $font1;
+                font-size: 18px;
+                font-weight:500;
+                color: $color_blue2; 
+                margin: 0 0 20px 0;
+            }
+            button{
+                width: 60px;
+                height: 60px;
+                border-radius: 5px;
+                border: none;
+                background-color: $color_blue1;
+                font-size: 30px;
+                margin: 5px;
+
+                opacity: .5;
+            }
+
+            .active{
+                opacity: 1;
+            }
+        }
+    }
+
+    .mention-legale{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        width: 100%;
+
+        opacity: .5;
+
+        @include flex(center);
+        flex-direction: column;
+        align-items: center ;
+    
+        h2{
+            font-family: $font1;
+            font-size: 15px;
+            font-weight:500;
+            color: $color_grey1; 
+            margin: 0 0 20px 0;
+        }
+        p{
+            width: 70%;
+            font-family: $font1;
+            font-size: 12px;
+            font-weight:300;
+            color: $color_grey1; 
+            margin: 10px 0 20px 0;
+            text-align: center;
+        }
+    }
+    
+}
