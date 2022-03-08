@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  shifumi_api:
+    build: ./api
+    ports:
+      - '5000:5000'
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:4.0
+    volumes:
+      - "./mongo/data:/data/db"
+    ports: 
+      - "27017:27017"
+    environment: 
+      - MONGO_INITDB_ROOT_USERNAME=api
+      - MONGO_INITDB_ROOT_PASSWORD=docker1234
