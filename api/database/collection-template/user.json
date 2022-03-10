@@ -1,0 +1,30 @@
+[
+    {
+        "_id" : 1,
+        "pseudo" : "loulou32",
+        "password" : "123456",
+
+        "score" : {
+            "score_arcade": 56,
+            "date_score_arcade" : "2022-02-01T03:24:00",
+
+            "score_adventure": 53,
+            "date_score_adventure" : "2022-02-01T03:24:00",
+
+            "score_realiste": 52,
+            "date_score_realiste" : "2022-02-01T03:24:00"
+        },
+
+        "icon_menu" : 1,
+        "sound_setting" : 10,
+        
+        "bonus" : {
+            "bonus_1": 3,
+            "bonus_2": 1
+        },
+
+        "last_connection" : "2022-02-01T03:24:00"
+    }
+   
+
+]

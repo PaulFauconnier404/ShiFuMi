@@ -302,6 +302,18 @@ a {
           align-items: center;
 }
 
+#pseudo-page .container-form .consignes {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 200;
+  color: #202020;
+  text-align: center;
+}
+
+#pseudo-page .container-form .consignes span {
+  font-weight: 500;
+}
+
 #pseudo-page .container-form .input-form-container {
   width: 250px;
   height: 50px;
@@ -361,6 +373,71 @@ a {
   transition: .7s;
 }
 
+#pseudo-page .container-form .password-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+#pseudo-page .container-form .password-container div {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #3F84F5;
+  border-radius: 8px;
+  margin: 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+#pseudo-page .container-form .password-container div input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+#pseudo-page .container-form .password-container div input:checked ~ span {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #C5DAFC;
+}
+
+#pseudo-page .container-form .password-container div p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #3F84F5;
+}
+
 #pseudo-page .container-form .container-button button {
   padding: 15px 20px;
   border-radius: 8px;
@@ -378,6 +455,69 @@ a {
   width: -moz-max-content;
   width: max-content;
   margin: 0;
+}
+
+#pseudo-page .pop-up-verification {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 300px;
+  padding: 20px 15px;
+  -webkit-box-shadow: 0px 0px 10px #DDDDDD;
+          box-shadow: 0px 0px 10px #DDDDDD;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+}
+
+#pseudo-page .pop-up-verification p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 200;
+  color: #202020;
+}
+
+#pseudo-page .pop-up-verification h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #202020;
+}
+
+#pseudo-page .pop-up-verification div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+#pseudo-page .pop-up-verification div button {
+  padding: 15px 20px;
+  border-radius: 8px;
+  background-color: #C5DAFC;
+  border: none;
+  margin: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #3F84F5;
+}
+
+#pseudo-page .pop-up-verification div button:first-child {
+  background-color: transparent;
+  margin: 10px;
+  padding: 0px 20px;
+}
+
+#pseudo-page .pop-up-verification div button:first-child p {
+  font-size: 12px;
 }
 
 #type-selection-page {
@@ -513,12 +653,14 @@ a {
   margin: 0;
 }
 
-#type-selection-page .container-button button:last-child {
+#type-selection-page .container-button button:nth-last-child(2), #type-selection-page .container-button button:last-child {
   background-color: transparent;
   opacity: .5;
+  margin: 10px;
+  padding: 0px 20px;
 }
 
-#type-selection-page .container-button button:last-child p {
+#type-selection-page .container-button button:nth-last-child(2) p, #type-selection-page .container-button button:last-child p {
   font-size: 12px;
 }
 
@@ -813,8 +955,8 @@ a {
 #play-section .play-container .top-gradient, #play-section .play-container .bottom-gradient {
   width: 100%;
   height: 90px;
-  background: -webkit-gradient(linear, left bottom, left top, from(#FFFFFF), to(transparent));
-  background: linear-gradient(0deg, #FFFFFF, transparent);
+  background: -webkit-gradient(linear, left bottom, left top, from(white), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(0deg, white, rgba(255, 255, 255, 0));
   position: absolute;
   left: 0;
 }
@@ -1132,5 +1274,169 @@ a {
 #play-section .container-button-to-play div button:last-child {
   -webkit-transform: translate(50%, -50%);
           transform: translate(50%, -50%);
+}
+
+#score-panel-page {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#score-panel-page .account-bubble {
+  position: relative;
+  width: 100%;
+  height: 50px;
+}
+
+#score-panel-page .account-bubble div {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  margin-top: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  background-color: #C5DAFC;
+  -webkit-box-shadow: 0 0 10px #AFAFAF;
+          box-shadow: 0 0 10px #AFAFAF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#score-panel-page .account-bubble div p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  color: #3F84F5;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0;
+}
+
+#score-panel-page .app-title h1 {
+  font-family: "Geogrotesque Cyr", sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  color: #202020;
+  margin: 50px 0 0 0;
+}
+
+#score-panel-page .app-title .stroke-title {
+  width: 70px;
+  height: 5px;
+  background: linear-gradient(70deg, #FF86B9, #867CD6);
+  border-radius: 50px;
+  margin-left: 15px;
+}
+
+#score-panel-page .paragraph-score p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 200;
+  color: #202020;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 40px 0;
+}
+
+#score-panel-page .paragraph-score p span {
+  font-weight: 700;
+}
+
+#score-panel-page .score-pannel-container {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 5px #DDDDDD;
+          box-shadow: 0px 0px 5px #DDDDDD;
+  padding: 20px;
+  max-width: 350px;
+}
+
+#score-panel-page .score-pannel-container table {
+  max-width: 1000px;
+}
+
+#score-panel-page .score-pannel-container table tr {
+  -webkit-border-horizontal-spacing: 0px;
+  -webkit-border-vertical-spacing: 0px;
+  border: none;
+  border-radius: 20px;
+}
+
+#score-panel-page .score-pannel-container table tr td {
+  padding: 10px 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #202020;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: "Montserrat", sans-serif;
+  border-right: 1px solid #202020;
+}
+
+#score-panel-page .score-pannel-container table tr td:last-child {
+  border: none;
+}
+
+#score-panel-page .score-pannel-container table tr td .user-img {
+  height: 50px;
+  width: 50px;
+  border: 1px solid #202020;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#score-panel-page .score-pannel-container table tr td div {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #DDDDDD;
+  background-position: center;
+  background-size: 40%;
+  background-repeat: no-repeat;
+  margin: auto;
+}
+
+#score-panel-page .score-pannel-container table tr:nth-child(odd) {
+  background-color: #FFFFFF;
+}
+
+#score-panel-page .score-pannel-container table tr:nth-child(even) {
+  background-color: #DDDDDD;
+}
+
+#score-panel-page .score-pannel-container table tr:first-child td {
+  font-size: 12px;
+  font-weight: 500;
+  border-right: none;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */
