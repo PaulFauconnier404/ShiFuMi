@@ -58,6 +58,17 @@
             width: 80%;
             margin: 0 10%;
 
+            .sound_range{
+                -webkit-appearance: none;
+                border-radius: 5px;
+                height: 5px;
+                background: $color_blue2;
+                outline: none;
+                opacity: .8;
+                width: 300px;
+
+                margin-bottom: 50px ;
+            }
             p{
                 font-family: $font1;
                 font-size: 18px;

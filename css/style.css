@@ -760,6 +760,17 @@ a {
   margin: 0 10%;
 }
 
+#setting-page .container-reglage .reglage .sound_range {
+  -webkit-appearance: none;
+  border-radius: 5px;
+  height: 5px;
+  background: #3F84F5;
+  outline: none;
+  opacity: .8;
+  width: 300px;
+  margin-bottom: 50px;
+}
+
 #setting-page .container-reglage .reglage p {
   font-family: "Montserrat", sans-serif;
   font-size: 18px;
