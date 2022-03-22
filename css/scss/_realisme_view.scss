@@ -1,0 +1,468 @@
+#play-section-realisme{
+        width:100%;
+        height:100vh;
+    
+        position: relative;
+    
+        @include flex(flex-start);
+        flex-direction: column;
+        align-items: center ;
+        .menu-play-container{
+            margin-top:20px;
+            width: 90%;
+            
+            z-index: 100;
+    
+            @include flex(space-between);
+            align-items: center ;
+    
+            .difficulty-container{
+                position: relative;
+                min-height: 30px;
+                .difficulty-emojy{
+                    position: absolute;
+                    top:0;
+                    left:0;
+    
+                    width: 30px;
+                    height: 30px;
+                    background-color: $color_white;
+                    box-shadow: 0 0 10px #AFAFAF;
+                    border-radius: 50px;
+    
+                    @include flex(center);
+                    align-items: center ;
+                    
+                }
+                .other-difficulty{
+                    position: absolute;
+                    top:0;
+                    left:0;
+    
+                    border-radius: 50px;
+    
+                    width: 30px;
+                    height: 125px;
+                    background-color: #DDDDDD;
+    
+                    transition: 0.5s;
+    
+                    div{
+                        margin: 10px 0;
+                        width: 30px;
+                        height: 30px;
+    
+                        @include flex(center);
+                        align-items: center ;
+                    }
+                }
+                .disabled{
+                   height: 0;
+                   opacity: 0;
+                   transition: 0.5s;
+                   
+                   
+                }
+               
+            }
+            .score-container{
+                p{
+                    font-family: $font1;
+                    font-size: 14px;
+                    font-weight:300;
+                    color: $color_grey1; 
+                    
+                    margin:0;
+        
+                }
+            }
+            .return-container{
+                div{
+                    width: 25px;
+                    height: 25px;
+    
+                    background-image: url(../image/icons/cross.png);
+                    background-position: center;
+                    background-size: contain;
+                }
+            }
+        }
+    
+        #game-container{
+            transition: background-image 0.5s linear;
+    
+            width: 100%;
+            height: 80%;
+    
+            position: relative;
+    
+            .top-gradient, .bottom-gradient{
+                width: 100%;
+                height: 90px;
+    
+                background: linear-gradient(0deg,  rgba(255,255,255,1),  rgba(255,255,255,0));
+    
+                position: absolute;
+                left: 0;
+            }
+            .top-gradient{
+                top:0;
+                transform: rotate(180deg);
+            }
+            .bottom-gradient{
+                bottom: 0;
+            }
+    
+            //Realisme view
+            .container {
+                margin: 20px auto;
+                display: flex;
+    
+                width: 100%;
+    
+    
+                position: absolute;
+                top:40%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+    
+                .video{
+                    width: 100%;
+                    position: relative;
+    
+                    .top-gradient-camera, .bottom-gradient-camera{
+                        width: 100%;
+                        height: 80px;
+            
+                        background: linear-gradient(0deg,  rgba(255,255,255,0),  rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
+            
+                        position: absolute;
+                        left: 0;
+                        z-index: 10;
+                    }
+                    .top-gradient-camera{
+                        top:0;
+                        transform: rotate(180deg);
+                    }
+                    .bottom-gradient-camera{
+                        bottom: 0;
+                    }
+    
+                    #video-container {
+                        width: 100%;
+                        height: 350px;
+    
+                        position: relative;
+                        
+                      .layer {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                      }
+                  
+                      #pose-video {
+                        transform: scaleX(-1);
+                      }
+                  #pose-canvas{
+                      opacity: 0;
+                  }
+                      #pose-result {
+                        font-size: 100px;
+                        text-align: right;
+                      }
+                    }
+                }
+                .debug {
+                    display: none;
+                }
+              }   
+              
+              #load-model{
+                position: absolute;
+                top:0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: $color_white;
+
+                @include flex(center);
+                align-items: center;
+                .container-load{
+                    .container-logotype{
+                        width: 100%;
+                        height:200px;
+                        position: relative;
+                        div{
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-10%, -35%);
+                
+                            width: 70px;
+                            height:70px;
+                            border-radius: 100px;
+                
+                            background-color: $color_blue1;
+                            box-shadow: 0 0 10px #AFAFAF;
+                
+                            @include flex(center);
+                            align-items: center ;
+                            font-size: 30px;
+                
+                            animation: loader1 2s ease-in-out infinite;
+                            
+                        }
+                        &::after, &::before{
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            
+                            width: 70px;
+                            height:70px;
+                            border-radius: 100px;
+                
+                            background-color: $color_blue1;
+                            box-shadow: 0 0 10px #AFAFAF;
+                
+                            @include flex(center);
+                            align-items: center ;
+                            font-size: 30px;
+                        }
+                        &::after{
+                            content: '👊';
+                            transform: translate(-50%, -90%);
+                
+                            animation: loader2 2s ease-in-out infinite;
+                        } 
+                        &::before{
+                            content: '✌️';
+                            transform: translate(-80%, -20%);
+                
+                            animation: loader3 2s ease-in-out infinite;
+                        }
+                        @include keyframefromtoloading(loader1, translate(-50%, -50%), translate(-50%, -90%), translate(-10%, -35%), translate(-80%, -20%),  translate(-50%, -90%) );
+                        @include keyframefromtoloading(loader2, translate(-50%, -50%), translate(-80%, -20%), translate(-50%, -90%), translate(-10%, -35%),  translate(-80%, -20%));
+                        @include keyframefromtoloading(loader3, translate(-50%, -50%), translate(-10%, -35%), translate(-80%, -20%), translate(-50%, -90%), translate(-10%, -35%));
+                
+                       
+                    }
+                    p{
+                        font-family: $font1;
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: $color_grey1;  
+                        text-align: center;  
+                        margin: 0;
+                        white-space: nowrap;
+                        overflow: hidden; 
+                        letter-spacing: .15em;
+                        animation: typing 3.5s steps(40, end) 1s infinite,
+                    }
+                    @keyframes typing {
+                        from { width: 0 }
+                        to { width: 100% }
+                      }
+                }
+                
+              }
+    
+            //Gameplay du joueur
+            #machine-play, #user-play{
+                width: 150px;
+                height: 150px;
+    
+                position: absolute;
+            }
+            #machine-play{
+                top: 20%;
+                left: 20%;            
+            }
+            #user-play{
+                bottom: 20%;
+                right: 20%;            
+            }
+            .win{
+                font-size: 150px;
+            }
+            .loose{
+                font-size: 90px;
+            }
+    
+        
+    
+            #animation-end-game{
+                width: 100%;
+                height: 100%;
+                background-color: $color_white;
+    
+                position: absolute;
+                z-index: 10;
+    
+                @include flex(center);
+                align-items: center ;
+    
+    
+                
+    
+                div{
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+    
+                    animation: silde-end-game .5s;
+                    
+                    p{
+                        
+                        width: 100%;
+                        transform: translate(-50%, -50%);
+                        position: absolute;
+                        top:53%;
+                        left:50%;
+    
+                        font-family: $font2;
+                        font-size: 50px;
+                        font-weight:700;
+                        text-transform: uppercase;
+                        text-align: center;
+                        color: $color_white;
+    
+                        text-shadow: $color_grey1 1px 1px,$color_grey1 -1px 1px,$color_grey1 -1px -1px,$color_grey1 1px -1px;
+                        z-index: 5;
+                        
+                        transition: .5s;
+                    }
+                    &::before{
+                        width: 100%;
+                        transform: translate(-50%, -50%);
+                        position: absolute;
+                        top:62%;
+                        left:50%;
+    
+                        font-family: $font2;
+                        font-size: 40px;
+                        font-weight:700;
+                        text-transform: uppercase;
+                        text-align: center;
+                        color: $color_white;
+    
+                        text-shadow: $color_grey1 1px 1px,$color_grey1 -1px 1px,$color_grey1 -1px -1px,$color_grey1 1px -1px;
+                        z-index: 5;
+                        content:'You win !';
+    
+                        transition: .5s;
+                    }
+                    &::after{
+                        content:'You win !';
+    
+                        font-family: $font2;
+                        font-size: 60px;
+                        font-weight:700;
+                        text-transform: uppercase;
+                        text-align: center;
+                        color: #51DBB6;
+    
+    
+                        width: 100%;
+                        transform: translate(-50%, -50%);
+                        position: absolute;
+                        top:57%;
+                        left:50%;
+    
+                        z-index: 7;
+    
+                        transition: .5s;
+                    }
+                   
+                }
+                
+            }
+        }
+        @keyframes silde-end-game {
+            0%{
+                p{
+                    top:49%;
+                    font-size: 60px;
+                    transition: .5s;
+                }
+                &::after{
+                    top:57%;
+                    font-size: 60px;
+                    transition: .5s;
+                }
+                &::before{
+                    top:57%;
+                    font-size: 60px;
+                    transition: .5s;
+                }
+            }
+            100%{
+                p{
+                    top:53%;
+                    font-size: 50px;
+                    transition: .5s;
+                }
+                &::after{
+                    top:57%;
+                    font-size: 60px;
+                    transition: .5s;
+                }
+                &::before{
+                    top:62%;
+                    font-size: 40px;
+                    transition: .5s;
+                }
+            
+            }
+        }
+    
+        .container-button-to-play{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+    
+            z-index: 15;
+    
+            width: 100%;
+            height: 150px;
+            div{
+                width: 100%;
+                height: 100%;
+                position: relative;
+    
+                button{
+                    opacity: .5;
+                    width: 80px;
+                    height: 80px;
+    
+                    position:absolute;
+                    top:50%;
+                    left: 50%;
+                    transform: translate(-50%, -100%);
+        
+        
+                    box-shadow: 0 0 10px #AFAFAF;
+        
+                    border-radius: 50%;
+                    background-color: $color_blue1;
+        
+                    border: none;
+        
+                    p{
+                        font-size: 30px;
+                        margin: 0;
+                    }
+    
+                    &:first-child{
+                        transform: translate(-150%, -50%);
+                    }
+                    &:last-child{
+                        transform: translate(50%, -50%);
+                    }
+                }
+            }
+           
+        }
+    
+    }

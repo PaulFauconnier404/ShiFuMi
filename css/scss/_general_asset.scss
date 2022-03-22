@@ -42,3 +42,16 @@
         margin-left: 15px;
     }
 }
+
+
+@mixin keyframefromtoloading($name : 'loader', $one : 0, $two : 0, $three : 0, $four : 0, $five : 0){
+    
+    @keyframes #{$name}{
+      0% { transform: $one;}
+      20% { transform: $two;}
+      40% { transform: $three;}
+      60% { transform: $four;}
+      80% { transform: $five;}
+      100% { transform: $one;}
+    }
+  } 

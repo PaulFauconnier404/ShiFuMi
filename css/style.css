@@ -978,6 +978,19 @@ a {
   bottom: 0;
 }
 
+#play-section #game-container .container {
+  margin: 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 #play-section #game-container #machine-play, #play-section #game-container #user-play {
   width: 150px;
   height: 150px;
@@ -1445,5 +1458,625 @@ a {
   font-weight: 500;
   border-right: none;
   text-align: center;
+}
+
+#play-section-realisme {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#play-section-realisme .menu-play-container {
+  margin-top: 20px;
+  width: 90%;
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#play-section-realisme .menu-play-container .difficulty-container {
+  position: relative;
+  min-height: 30px;
+}
+
+#play-section-realisme .menu-play-container .difficulty-container .difficulty-emojy {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 0 0 10px #AFAFAF;
+          box-shadow: 0 0 10px #AFAFAF;
+  border-radius: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#play-section-realisme .menu-play-container .difficulty-container .other-difficulty {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50px;
+  width: 30px;
+  height: 125px;
+  background-color: #DDDDDD;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#play-section-realisme .menu-play-container .difficulty-container .other-difficulty div {
+  margin: 10px 0;
+  width: 30px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#play-section-realisme .menu-play-container .difficulty-container .disabled {
+  height: 0;
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#play-section-realisme .menu-play-container .score-container p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #202020;
+  margin: 0;
+}
+
+#play-section-realisme .menu-play-container .return-container div {
+  width: 25px;
+  height: 25px;
+  background-image: url(../image/icons/cross.png);
+  background-position: center;
+  background-size: contain;
+}
+
+#play-section-realisme #game-container {
+  -webkit-transition: background-image 0.5s linear;
+  transition: background-image 0.5s linear;
+  width: 100%;
+  height: 80%;
+  position: relative;
+}
+
+#play-section-realisme #game-container .top-gradient, #play-section-realisme #game-container .bottom-gradient {
+  width: 100%;
+  height: 90px;
+  background: -webkit-gradient(linear, left bottom, left top, from(white), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(0deg, white, rgba(255, 255, 255, 0));
+  position: absolute;
+  left: 0;
+}
+
+#play-section-realisme #game-container .top-gradient {
+  top: 0;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+#play-section-realisme #game-container .bottom-gradient {
+  bottom: 0;
+}
+
+#play-section-realisme #game-container .container {
+  margin: 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#play-section-realisme #game-container .container .video {
+  width: 100%;
+  position: relative;
+}
+
+#play-section-realisme #game-container .container .video .top-gradient-camera, #play-section-realisme #game-container .container .video .bottom-gradient-camera {
+  width: 100%;
+  height: 80px;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0)), color-stop(white), color-stop(white), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0), white, white, rgba(255, 255, 255, 0));
+  position: absolute;
+  left: 0;
+  z-index: 10;
+}
+
+#play-section-realisme #game-container .container .video .top-gradient-camera {
+  top: 0;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+#play-section-realisme #game-container .container .video .bottom-gradient-camera {
+  bottom: 0;
+}
+
+#play-section-realisme #game-container .container .video #video-container {
+  width: 100%;
+  height: 350px;
+  position: relative;
+}
+
+#play-section-realisme #game-container .container .video #video-container .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#play-section-realisme #game-container .container .video #video-container #pose-video {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+#play-section-realisme #game-container .container .video #video-container #pose-canvas {
+  opacity: 0;
+}
+
+#play-section-realisme #game-container .container .video #video-container #pose-result {
+  font-size: 100px;
+  text-align: right;
+}
+
+#play-section-realisme #game-container .container .debug {
+  display: none;
+}
+
+#play-section-realisme #game-container #load-model {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#play-section-realisme #game-container #load-model .container-load .container-logotype {
+  width: 100%;
+  height: 200px;
+  position: relative;
+}
+
+#play-section-realisme #game-container #load-model .container-load .container-logotype div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-10%, -35%);
+          transform: translate(-10%, -35%);
+  width: 70px;
+  height: 70px;
+  border-radius: 100px;
+  background-color: #C5DAFC;
+  -webkit-box-shadow: 0 0 10px #AFAFAF;
+          box-shadow: 0 0 10px #AFAFAF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 30px;
+  -webkit-animation: loader1 2s ease-in-out infinite;
+          animation: loader1 2s ease-in-out infinite;
+}
+
+#play-section-realisme #game-container #load-model .container-load .container-logotype::after, #play-section-realisme #game-container #load-model .container-load .container-logotype::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  border-radius: 100px;
+  background-color: #C5DAFC;
+  -webkit-box-shadow: 0 0 10px #AFAFAF;
+          box-shadow: 0 0 10px #AFAFAF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 30px;
+}
+
+#play-section-realisme #game-container #load-model .container-load .container-logotype::after {
+  content: '👊';
+  -webkit-transform: translate(-50%, -90%);
+          transform: translate(-50%, -90%);
+  -webkit-animation: loader2 2s ease-in-out infinite;
+          animation: loader2 2s ease-in-out infinite;
+}
+
+#play-section-realisme #game-container #load-model .container-load .container-logotype::before {
+  content: '✌️';
+  -webkit-transform: translate(-80%, -20%);
+          transform: translate(-80%, -20%);
+  -webkit-animation: loader3 2s ease-in-out infinite;
+          animation: loader3 2s ease-in-out infinite;
+}
+
+@keyframes loader1 {
+  0% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  20% {
+    -webkit-transform: translate(-50%, -90%);
+            transform: translate(-50%, -90%);
+  }
+  40% {
+    -webkit-transform: translate(-10%, -35%);
+            transform: translate(-10%, -35%);
+  }
+  60% {
+    -webkit-transform: translate(-80%, -20%);
+            transform: translate(-80%, -20%);
+  }
+  80% {
+    -webkit-transform: translate(-50%, -90%);
+            transform: translate(-50%, -90%);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes loader2 {
+  0% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  20% {
+    -webkit-transform: translate(-80%, -20%);
+            transform: translate(-80%, -20%);
+  }
+  40% {
+    -webkit-transform: translate(-50%, -90%);
+            transform: translate(-50%, -90%);
+  }
+  60% {
+    -webkit-transform: translate(-10%, -35%);
+            transform: translate(-10%, -35%);
+  }
+  80% {
+    -webkit-transform: translate(-80%, -20%);
+            transform: translate(-80%, -20%);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes loader3 {
+  0% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  20% {
+    -webkit-transform: translate(-10%, -35%);
+            transform: translate(-10%, -35%);
+  }
+  40% {
+    -webkit-transform: translate(-80%, -20%);
+            transform: translate(-80%, -20%);
+  }
+  60% {
+    -webkit-transform: translate(-50%, -90%);
+            transform: translate(-50%, -90%);
+  }
+  80% {
+    -webkit-transform: translate(-10%, -35%);
+            transform: translate(-10%, -35%);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+#play-section-realisme #game-container #load-model .container-load p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #202020;
+  text-align: center;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  letter-spacing: .15em;
+  -webkit-animation: typing 3.5s steps(40, end) 1s infinite;
+          animation: typing 3.5s steps(40, end) 1s infinite;
+}
+
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+#play-section-realisme #game-container #machine-play, #play-section-realisme #game-container #user-play {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+}
+
+#play-section-realisme #game-container #machine-play {
+  top: 20%;
+  left: 20%;
+}
+
+#play-section-realisme #game-container #user-play {
+  bottom: 20%;
+  right: 20%;
+}
+
+#play-section-realisme #game-container .win {
+  font-size: 150px;
+}
+
+#play-section-realisme #game-container .loose {
+  font-size: 90px;
+}
+
+#play-section-realisme #game-container #animation-end-game {
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+  position: absolute;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#play-section-realisme #game-container #animation-end-game div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-animation: silde-end-game .5s;
+          animation: silde-end-game .5s;
+}
+
+#play-section-realisme #game-container #animation-end-game div p {
+  width: 100%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  font-family: "Geogrotesque Cyr", sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  color: #FFFFFF;
+  text-shadow: #202020 1px 1px, #202020 -1px 1px, #202020 -1px -1px, #202020 1px -1px;
+  z-index: 5;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+#play-section-realisme #game-container #animation-end-game div::before {
+  width: 100%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+  top: 62%;
+  left: 50%;
+  font-family: "Geogrotesque Cyr", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  color: #FFFFFF;
+  text-shadow: #202020 1px 1px, #202020 -1px 1px, #202020 -1px -1px, #202020 1px -1px;
+  z-index: 5;
+  content: 'You win !';
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+#play-section-realisme #game-container #animation-end-game div::after {
+  content: 'You win !';
+  font-family: "Geogrotesque Cyr", sans-serif;
+  font-size: 60px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  color: #51DBB6;
+  width: 100%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  z-index: 7;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+@keyframes silde-end-game {
+  0% {
+    p {
+      top: 49%;
+      font-size: 60px;
+      -webkit-transition: .5s;
+      transition: .5s;
+    }
+    #play-section-realisme::after {
+      top: 57%;
+      font-size: 60px;
+      -webkit-transition: .5s;
+      transition: .5s;
+    }
+    #play-section-realisme::before {
+      top: 57%;
+      font-size: 60px;
+      -webkit-transition: .5s;
+      transition: .5s;
+    }
+  }
+  100% {
+    p {
+      top: 53%;
+      font-size: 50px;
+      -webkit-transition: .5s;
+      transition: .5s;
+    }
+    #play-section-realisme::after {
+      top: 57%;
+      font-size: 60px;
+      -webkit-transition: .5s;
+      transition: .5s;
+    }
+    #play-section-realisme::before {
+      top: 62%;
+      font-size: 40px;
+      -webkit-transition: .5s;
+      transition: .5s;
+    }
+  }
+}
+
+#play-section-realisme .container-button-to-play {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 15;
+  width: 100%;
+  height: 150px;
+}
+
+#play-section-realisme .container-button-to-play div {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#play-section-realisme .container-button-to-play div button {
+  opacity: .5;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
+  -webkit-box-shadow: 0 0 10px #AFAFAF;
+          box-shadow: 0 0 10px #AFAFAF;
+  border-radius: 50%;
+  background-color: #C5DAFC;
+  border: none;
+}
+
+#play-section-realisme .container-button-to-play div button p {
+  font-size: 30px;
+  margin: 0;
+}
+
+#play-section-realisme .container-button-to-play div button:first-child {
+  -webkit-transform: translate(-150%, -50%);
+          transform: translate(-150%, -50%);
+}
+
+#play-section-realisme .container-button-to-play div button:last-child {
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
 }
 /*# sourceMappingURL=style.css.map */
