@@ -244,7 +244,7 @@ a {
 
 #pseudo-page {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -280,11 +280,6 @@ a {
 }
 
 #pseudo-page .container-form {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -374,6 +369,7 @@ a {
 }
 
 #pseudo-page .container-form .password-container {
+  width: 250px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -426,6 +422,7 @@ a {
 }
 
 #pseudo-page .container-form .password-container div p {
+  pointer-events: none;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -909,6 +906,8 @@ a {
   width: 30px;
   height: 125px;
   background-color: #DDDDDD;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 #play-section .menu-play-container .difficulty-container .other-difficulty div {
@@ -929,7 +928,10 @@ a {
 }
 
 #play-section .menu-play-container .difficulty-container .disabled {
-  display: none;
+  height: 0;
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 #play-section .menu-play-container .score-container p {
@@ -948,22 +950,16 @@ a {
   background-size: contain;
 }
 
-#play-section .medium-level {
-  background: linear-gradient(-45deg, #F2BE77, #E0D558);
-}
-
-#play-section .hard-level {
-  background: linear-gradient(-45deg, #E05892, #F2C377);
-}
-
-#play-section .play-container {
-  background: linear-gradient(-45deg, #51DBB6, #C5DAFC);
+#play-section #game-container {
+  -webkit-transition: background-image 0.5s linear;
+  transition: background-image 0.5s linear;
+  background-image: linear-gradient(-45deg, #51dbb7, #c5dafc);
   width: 100%;
   height: 80%;
   position: relative;
 }
 
-#play-section .play-container .top-gradient, #play-section .play-container .bottom-gradient {
+#play-section #game-container .top-gradient, #play-section #game-container .bottom-gradient {
   width: 100%;
   height: 90px;
   background: -webkit-gradient(linear, left bottom, left top, from(white), to(rgba(255, 255, 255, 0)));
@@ -972,47 +968,47 @@ a {
   left: 0;
 }
 
-#play-section .play-container .top-gradient {
+#play-section #game-container .top-gradient {
   top: 0;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
 
-#play-section .play-container .bottom-gradient {
+#play-section #game-container .bottom-gradient {
   bottom: 0;
 }
 
-#play-section .play-container #machine-play, #play-section .play-container #user-play {
+#play-section #game-container #machine-play, #play-section #game-container #user-play {
   width: 150px;
   height: 150px;
   position: absolute;
 }
 
-#play-section .play-container #machine-play {
+#play-section #game-container #machine-play {
   top: 20%;
   left: 20%;
 }
 
-#play-section .play-container #user-play {
+#play-section #game-container #user-play {
   bottom: 20%;
   right: 20%;
 }
 
-#play-section .play-container .win {
+#play-section #game-container .win {
   font-size: 150px;
 }
 
-#play-section .play-container .loose {
+#play-section #game-container .loose {
   font-size: 90px;
 }
 
-#play-section .play-container #container-bonus {
+#play-section #game-container #container-bonus {
   position: absolute;
   left: 5%;
   bottom: 10%;
 }
 
-#play-section .play-container #container-bonus .bonus {
+#play-section #game-container #container-bonus .bonus {
   position: relative;
   width: 60px;
   height: 60px;
@@ -1034,7 +1030,7 @@ a {
           align-items: center;
 }
 
-#play-section .play-container #container-bonus .bonus p {
+#play-section #game-container #container-bonus .bonus p {
   font-family: "Montserrat", sans-serif;
   font-size: 30px;
   font-weight: 700;
@@ -1042,7 +1038,7 @@ a {
   margin: 0;
 }
 
-#play-section .play-container #container-bonus .bonus div {
+#play-section #game-container #container-bonus .bonus div {
   position: absolute;
   right: 0%;
   bottom: 0;
@@ -1063,7 +1059,7 @@ a {
           align-items: center;
 }
 
-#play-section .play-container #container-bonus .bonus div p {
+#play-section #game-container #container-bonus .bonus div p {
   font-family: "Montserrat", sans-serif;
   font-size: 10px;
   font-weight: 700;
@@ -1071,7 +1067,7 @@ a {
   margin: 0;
 }
 
-#play-section .play-container #animation-end-game {
+#play-section #game-container #animation-end-game {
   width: 100%;
   height: 100%;
   background-color: #FFFFFF;
@@ -1090,7 +1086,7 @@ a {
           align-items: center;
 }
 
-#play-section .play-container #animation-end-game div {
+#play-section #game-container #animation-end-game div {
   position: relative;
   width: 100%;
   height: 100%;
@@ -1098,7 +1094,7 @@ a {
           animation: silde-end-game .5s;
 }
 
-#play-section .play-container #animation-end-game div p {
+#play-section #game-container #animation-end-game div p {
   width: 100%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -1117,7 +1113,7 @@ a {
   transition: .5s;
 }
 
-#play-section .play-container #animation-end-game div::before {
+#play-section #game-container #animation-end-game div::before {
   width: 100%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -1137,7 +1133,7 @@ a {
   transition: .5s;
 }
 
-#play-section .play-container #animation-end-game div::after {
+#play-section #game-container #animation-end-game div::after {
   content: 'You win !';
   font-family: "Geogrotesque Cyr", sans-serif;
   font-size: 60px;

@@ -8,15 +8,20 @@
     <title>ShiFuMi | Mode arcade</title>
 </head>
 <body>
+    <!--JS Script-->
+    <script src="../js/arcade_mode/set_difficulty.js"></script>
+
+
     <section id="play-section">
         <div class="menu-play-container">
+
             <div class="difficulty-container">
-                <div class="other-difficulty">
+                <div id="set-difficulty" class="other-difficulty disabled">
                     <div></div>
-                    <div>😯</div>
-                    <div>🤯</div>
+                    <div id="position-1-difficulty" onclick="setGameDifficulty(1)">😯</div>
+                    <div id="position-2-difficulty" onclick="setGameDifficulty(2)" >🤯</div>
                 </div>
-                <div class="difficulty-emojy">
+                <div id="selected-difficulty" class="difficulty-emojy" onclick="setViewDifficulty()">
                     😌
                 </div>
                
@@ -30,12 +35,14 @@
                 </a>
             </div>
         </div>
-        <div class="play-container">    
+        <div id="game-container" class="play-container">    
+            <!--
             <div id="animation-end-game" class="active">
                 <div>
                     <p id="text-end-game" class="animation-active win">You win !</p>
                 </div>
             </div>
+            -->
 
            <div class="top-gradient"></div>
 

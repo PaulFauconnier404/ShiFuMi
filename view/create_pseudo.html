@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/style.css" rel="stylesheet">
     <title>ShiFuMi | Pseudo</title>
+
+
 </head>
 <body>
+    <script src="../js/CRUD_database/pseudo_connection.js"></script>
+
     <section id="pseudo-page">
         
         <div class="app-title">
@@ -21,34 +25,34 @@
                 Entrez votre pseudo / mot de passe ou créez le ! <br/>
                 Tous ce passe en dessous, n'ayez pas peur ! 😁<br/>
             </p>
+            <form onsubmit="handleSubmit()">
+                <div class="input-form-container">
+                    <input type="text" onkeyup="handleChangePseudo()" required id="pseudo-user" name="pseudo" />
+                    <p>Votre pseudo</p>
+                </div>
+                <div class="password-container">
+                    <div><input type="checkbox" onchange="handleChange(1)" /><span></span><p>1</p></div>
+                    <div><input type="checkbox" onchange="handleChange(2)"/><span></span><p>2</p></div>
+                    <div><input type="checkbox" onchange="handleChange(3)"/><span></span><p>3</p></div>
+                    <div><input type="checkbox" onchange="handleChange(4)"/><span></span><p>4</p></div>
+                    <div><input type="checkbox" onchange="handleChange(5)"/><span></span><p>5</p></div>
+                    <div><input type="checkbox" onchange="handleChange(6)"/><span></span><p>6</p></div>
+                    <div><input type="checkbox" onchange="handleChange(7)"/><span></span><p>7</p></div>
+                    <div><input type="checkbox" onchange="handleChange(8)"/><span></span><p>8</p></div>
+                    <div><input type="checkbox" onchange="handleChange(9)"/><span></span><p>9</p></div>
+                </div>
 
-            <div class="input-form-container">
-                <input type="text" required name="pseudo" />
-                <p>Votre pseudo</p>
-            </div>
-            <div class="password-container">
-                <div><input type="checkbox"/><span></span><p>1</p></div>
-                <div><input type="checkbox"/><span></span><p>2</p></div>
-                <div><input type="checkbox"/><span></span><p>3</p></div>
-                <div><input type="checkbox"/><span></span><p>4</p></div>
-                <div><input type="checkbox"/><span></span><p>5</p></div>
-                <div><input type="checkbox"/><span></span><p>6</p></div>
-                <div><input type="checkbox"/><span></span><p>7</p></div>
-                <div><input type="checkbox"/><span></span><p>8</p></div>
-                <div><input type="checkbox"/><span></span><p>9</p></div>
-            </div>
-
-            <div class="container-button">
-                <a href="type_selection.html">
-                    <button>
-                        <p>Commençons</p>
-                    </button>
-                </a>
-            </div>
-
+                <div class="container-button">
+                    <a href="type_selection.html">
+                        <button type="submit">
+                            <p>Commençons</p>
+                        </button>
+                    </a>
+                </div>
+            </form>
         </div>
 
-        <div class="pop-up-verification">
+        <!-- <div class="pop-up-verification">
             <h1>Êtes vous sur de vouloir créer votre compte ?</h1>
             <p>
                 Attention, vous êtes sur le oint de créer un nouveau compte ! 
@@ -58,7 +62,7 @@
                 <button>Non, j'ai un doute ! 🤫</button>
                 <button>Oui, je suis sûr 🥳</button>
             </div>
-        </div>
+        </div> -->
 
     </section>
 
