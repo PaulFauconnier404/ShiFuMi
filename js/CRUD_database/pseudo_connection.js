@@ -3,6 +3,8 @@
 var password_request = [];
 var pseudo = ""
 
+localStorage.setItem('score', 0)
+
 function handleChangePseudo() {
     pseudo = document.getElementById('pseudo-user').value;
 
@@ -10,7 +12,6 @@ function handleChangePseudo() {
 }
 
 function handleChange(num) {
-    console.log(pseudo)
     if (password_request.indexOf(num) == -1) {
 
         password_request.push(num);
@@ -29,7 +30,7 @@ async function handleSubmit() {
         document.getElementById('pop-up-verification').classList.remove('unactive')
     } else {
         if (JSON.stringify(returnData.password) == JSON.stringify(password_request)) {
-            localStorage.setItem('connected',pseudo)
+            localStorage.setItem('connected', returnData._id)
             window.location = "/view/type_selection.html"
         }else{
             document.getElementById('error').innerHTML = "Pseudo déjà utilisé / Mot de passe incorrect"
@@ -42,7 +43,8 @@ function handleValid(value) {
     if (value == 0) {
         document.getElementById('pop-up-verification').classList.add('unactive')
     } else {
-        fetch('http://127.0.0.1:5000/api/user_data', {
+        var returnId;
+        fetch('https://shifumi-1.herokuapp.com/api/user_data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -57,21 +59,26 @@ function handleValid(value) {
             }),
         })
             .then((res) => {
-                return res.json();
+                return returnId = res.json();
             })
-            .then((data) => console.log(data));
+            .then((data) => localStorage.setItem('connected', data.insertedId)
+            );
 
+           
             
-        window.location = "/view/type_selection.html"
+       setTimeout(
+           function f(returnId){
+                window.location = "/view/type_selection.html"
+           }, 1000
+       )
     }
 
 }
 
 async function getUsers(pseudo) {
-    localStorage.setItem('connected',pseudo)
 
     try {
-        let res = await fetch('http://127.0.0.1:5000/api/user_data/' + pseudo);
+        let res = await fetch('https://shifumi-1.herokuapp.com/api/user_data/' + pseudo);
         return await res.json();
     } catch (error) {
         console.log(error);

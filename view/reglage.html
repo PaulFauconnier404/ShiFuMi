@@ -16,7 +16,7 @@
         <div class="account-bubble">
             <a href="">
                 <div id="persomoji-menu">
-                    <p><script>(localStorage.getItem('persomoji') != '')? document.write(localStorage.getItem('persomoji')) : document.write('👨🏻‍🦰')</script></p>
+                    <p><script>(localStorage.getItem('persomoji') != null)? document.write(localStorage.getItem('persomoji')) : document.write('👨🏻‍🦰')</script></p>
                 </div>
             </a>
         </div>
@@ -29,26 +29,26 @@
                 <p class="return-button"> &lt; Retour au menu</p>
             </a>
 
-            <div class="reglage">
+            <!--<div class="reglage">
                 <p>🔊 Niveau sonore</p>
                 <div>
                     <input class="sound_range" value="90" type="range" min="0" max="100" step="1"/>
                 </div>
-            </div>
+            </div>-->
             <div class="reglage">
                 <p>👨🏻‍🦰 Mon personnage</p>
-                <div class="butto-container">
+                <div class="button-container">
                     <button id="persomiji-1" onclick="ChangePerso('1', '👨🏻‍🦰')" class="active">
-                        👨🏻‍🦰
+                        <p>👨🏻‍🦰</p>
                     </button>
                     <button id="persomiji-2" onclick="ChangePerso('2', '💂🏼')">
-                        💂🏼
+                        <p>💂🏼</p>
                     </button>
                     <button id="persomiji-3" onclick="ChangePerso('3', '👩🏼‍🚀')"> 
-                        👩🏼‍🚀
+                        <p>👩🏼‍🚀</p>
                     </button>
                     <button id="persomiji-4" onclick="ChangePerso('4', '👩🏻‍🦳')">
-                        👩🏻‍🦳
+                        <p>👩🏻‍🦳</p>
                     </button>
                 </div>
             </div>
@@ -59,7 +59,7 @@
             <p>
                 Designé & développé par : 
                 Charles Musial, Paul Fauconnier, Anthony Chambet, 
-                Roman Tchitchinkine, Houssam Imany
+                Roman Tchitchaikine, Houssam Imany
             </p>
         </div>
     </section>

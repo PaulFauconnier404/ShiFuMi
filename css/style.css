@@ -20,7 +20,7 @@ a {
 
 #first-page {
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -244,7 +244,7 @@ a {
 
 #pseudo-page {
   width: 100%;
-  min-height: 100vh;
+  min-height: 80vh;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -531,7 +531,7 @@ a {
 
 #type-selection-page {
   width: 100%;
-  height: 100vh;
+  min-height: 80vh;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -675,7 +675,7 @@ a {
 
 #setting-page {
   width: 100%;
-  height: 100vh;
+  min-height: 90vh;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -788,15 +788,42 @@ a {
   margin: 0 0 20px 0;
 }
 
+#setting-page .container-reglage .reglage .button-container {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
 #setting-page .container-reglage .reglage button {
   width: 60px;
   height: 60px;
   border-radius: 5px;
   border: none;
   background-color: #C5DAFC;
-  font-size: 30px;
   margin: 5px;
   opacity: .5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#setting-page .container-reglage .reglage button p {
+  font-size: 25px;
+  margin: 0 !important;
 }
 
 #setting-page .container-reglage .reglage .active {
@@ -846,7 +873,7 @@ a {
 
 #play-section {
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1254,7 +1281,7 @@ a {
 
 #score-panel-page {
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1418,7 +1445,7 @@ a {
 
 #play-section-realisme {
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1511,13 +1538,13 @@ a {
 }
 
 #play-section-realisme #game-container .container .video .top-gradient-camera {
-  top: 0;
+  top: -20px;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
 
 #play-section-realisme #game-container .container .video .bottom-gradient-camera {
-  bottom: 0;
+  bottom: -20px;
 }
 
 #play-section-realisme #game-container .container .video #video-container {

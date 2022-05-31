@@ -103,6 +103,9 @@ function youWin(element, winner){
         document.getElementById('animation-end-game').style.display = 'block';
         setTimeout(function reset(){document.getElementById('animation-end-game').style.display = 'none'}, 1000)
     }
+
+    localStorage.setItem('score',UserScore)
+
 }
 
 function computerChoice(){
