@@ -68,8 +68,8 @@ a {
       -ms-flex-align: center;
           align-items: center;
   font-size: 30px;
-  -webkit-animation-name: loader1;
-          animation-name: loader1;
+  -webkit-animation-name: loaderMain1;
+          animation-name: loaderMain1;
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
 }
@@ -104,19 +104,19 @@ a {
   content: '👊';
   -webkit-transform: translate(-50%, -90%);
           transform: translate(-50%, -90%);
-  -webkit-animation-name: loader2;
-          animation-name: loader2;
+  -webkit-animation-name: loaderMain2;
+          animation-name: loaderMain2;
 }
 
 #first-page .cointainer-logotype::before {
   content: '✌️';
   -webkit-transform: translate(-80%, -20%);
           transform: translate(-80%, -20%);
-  -webkit-animation-name: loader3;
-          animation-name: loader3;
+  -webkit-animation-name: loaderMain3;
+          animation-name: loaderMain3;
 }
 
-@-webkit-keyframes loader1 {
+@-webkit-keyframes loaderMain1 {
   0% {
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
@@ -131,7 +131,7 @@ a {
   }
 }
 
-@keyframes loader1 {
+@keyframes loaderMain1 {
   0% {
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
@@ -146,7 +146,7 @@ a {
   }
 }
 
-@-webkit-keyframes loader2 {
+@-webkit-keyframes loaderMain2 {
   0% {
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
@@ -161,7 +161,7 @@ a {
   }
 }
 
-@keyframes loader2 {
+@keyframes loaderMain2 {
   0% {
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
@@ -176,7 +176,7 @@ a {
   }
 }
 
-@-webkit-keyframes loader3 {
+@-webkit-keyframes loaderMain3 {
   0% {
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
@@ -191,7 +191,7 @@ a {
   }
 }
 
-@keyframes loader3 {
+@keyframes loaderMain3 {
   0% {
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
@@ -454,7 +454,19 @@ a {
   margin: 0;
 }
 
+#pseudo-page .unactive {
+  display: none !important;
+}
+
+#pseudo-page #error {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 200;
+  color: #202020;
+}
+
 #pseudo-page .pop-up-verification {
+  display: block;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -942,6 +954,10 @@ a {
   margin: 0;
 }
 
+#play-section .menu-play-container .score-container p span {
+  font-weight: 700;
+}
+
 #play-section .menu-play-container .return-container div {
   width: 25px;
   height: 25px;
@@ -1004,7 +1020,7 @@ a {
 
 #play-section #game-container #user-play {
   bottom: 20%;
-  right: 20%;
+  right: 5%;
 }
 
 #play-section #game-container .win {
@@ -1044,6 +1060,7 @@ a {
 }
 
 #play-section #game-container #container-bonus .bonus p {
+  pointer-events: none;
   font-family: "Montserrat", sans-serif;
   font-size: 30px;
   font-weight: 700;
@@ -1083,28 +1100,16 @@ a {
 #play-section #game-container #animation-end-game {
   width: 100%;
   height: 100%;
-  background-color: #FFFFFF;
   position: absolute;
   z-index: 10;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  background: radial-gradient(white, rgba(255, 255, 255, 0));
+  display: none;
 }
 
 #play-section #game-container #animation-end-game div {
   position: relative;
   width: 100%;
   height: 100%;
-  -webkit-animation: silde-end-game .5s;
-          animation: silde-end-game .5s;
 }
 
 #play-section #game-container #animation-end-game div p {
@@ -1112,142 +1117,93 @@ a {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   position: absolute;
-  top: 53%;
   left: 50%;
   font-family: "Geogrotesque Cyr", sans-serif;
-  font-size: 50px;
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
   color: #FFFFFF;
-  text-shadow: #202020 1px 1px, #202020 -1px 1px, #202020 -1px -1px, #202020 1px -1px;
   z-index: 5;
   -webkit-transition: .5s;
   transition: .5s;
 }
 
-#play-section #game-container #animation-end-game div::before {
-  width: 100%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  position: absolute;
-  top: 62%;
-  left: 50%;
-  font-family: "Geogrotesque Cyr", sans-serif;
-  font-size: 40px;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
-  color: #FFFFFF;
-  text-shadow: #202020 1px 1px, #202020 -1px 1px, #202020 -1px -1px, #202020 1px -1px;
-  z-index: 5;
-  content: 'You win !';
-  -webkit-transition: .5s;
-  transition: .5s;
-}
-
-#play-section #game-container #animation-end-game div::after {
-  content: 'You win !';
-  font-family: "Geogrotesque Cyr", sans-serif;
-  font-size: 60px;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
+#play-section #game-container #animation-end-game div .win {
   color: #51DBB6;
-  width: 100%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  position: absolute;
-  top: 57%;
-  left: 50%;
-  z-index: 7;
-  -webkit-transition: .5s;
-  transition: .5s;
 }
 
-@-webkit-keyframes silde-end-game {
+#play-section #game-container #animation-end-game div .loose {
+  color: #db5158;
+}
+
+#play-section #game-container #animation-end-game div .equality {
+  color: #515adb;
+}
+
+#play-section #game-container #animation-end-game div #text-end-game-1 {
+  font-size: 60px;
+  top: 30%;
+  -webkit-animation: sildeEndGame 2s ease-in-out infinite;
+          animation: sildeEndGame 2s ease-in-out infinite;
+}
+
+#play-section #game-container #animation-end-game div #text-end-game-2 {
+  text-shadow: #202020 1px 1px, #202020 -1px 1px, #202020 -1px -1px, #202020 1px -1px;
+  font-size: 50px;
+  top: 35%;
+  -webkit-animation: sildeEndGame1 1s;
+          animation: sildeEndGame1 1s;
+}
+
+#play-section #game-container #animation-end-game div #text-end-game-3 {
+  text-shadow: #202020 1px 1px, #202020 -1px 1px, #202020 -1px -1px, #202020 1px -1px;
+  font-size: 40px;
+  top: 40%;
+  -webkit-animation: sildeEndGame2 1s;
+          animation: sildeEndGame2 1s;
+}
+
+@-webkit-keyframes sildeEndGame1 {
   0% {
-    p {
-      top: 49%;
-      font-size: 60px;
-      -webkit-transition: .5s;
-      transition: .5s;
-    }
-    #play-section::after {
-      top: 57%;
-      font-size: 60px;
-      -webkit-transition: .5s;
-      transition: .5s;
-    }
-    #play-section::before {
-      top: 57%;
-      font-size: 60px;
-      -webkit-transition: .5s;
-      transition: .5s;
-    }
+    font-size: 60px;
+    top: 30%;
   }
   100% {
-    p {
-      top: 53%;
-      font-size: 50px;
-      -webkit-transition: .5s;
-      transition: .5s;
-    }
-    #play-section::after {
-      top: 57%;
-      font-size: 60px;
-      -webkit-transition: .5s;
-      transition: .5s;
-    }
-    #play-section::before {
-      top: 62%;
-      font-size: 40px;
-      -webkit-transition: .5s;
-      transition: .5s;
-    }
+    font-size: 50px;
+    top: 35%;
   }
 }
 
-@keyframes silde-end-game {
+@keyframes sildeEndGame1 {
   0% {
-    p {
-      top: 49%;
-      font-size: 60px;
-      -webkit-transition: .5s;
-      transition: .5s;
-    }
-    #play-section::after {
-      top: 57%;
-      font-size: 60px;
-      -webkit-transition: .5s;
-      transition: .5s;
-    }
-    #play-section::before {
-      top: 57%;
-      font-size: 60px;
-      -webkit-transition: .5s;
-      transition: .5s;
-    }
+    font-size: 60px;
+    top: 30%;
   }
   100% {
-    p {
-      top: 53%;
-      font-size: 50px;
-      -webkit-transition: .5s;
-      transition: .5s;
-    }
-    #play-section::after {
-      top: 57%;
-      font-size: 60px;
-      -webkit-transition: .5s;
-      transition: .5s;
-    }
-    #play-section::before {
-      top: 62%;
-      font-size: 40px;
-      -webkit-transition: .5s;
-      transition: .5s;
-    }
+    font-size: 50px;
+    top: 35%;
+  }
+}
+
+@-webkit-keyframes sildeEndGame2 {
+  0% {
+    font-size: 60px;
+    top: 30%;
+  }
+  100% {
+    font-size: 40px;
+    top: 40%;
+  }
+}
+
+@keyframes sildeEndGame2 {
+  0% {
+    font-size: 60px;
+    top: 30%;
+  }
+  100% {
+    font-size: 40px;
+    top: 40%;
   }
 }
 
@@ -1498,76 +1454,16 @@ a {
           align-items: center;
 }
 
-#play-section-realisme .menu-play-container .difficulty-container {
-  position: relative;
-  min-height: 30px;
-}
-
-#play-section-realisme .menu-play-container .difficulty-container .difficulty-emojy {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 30px;
-  height: 30px;
-  background-color: #FFFFFF;
-  -webkit-box-shadow: 0 0 10px #AFAFAF;
-          box-shadow: 0 0 10px #AFAFAF;
-  border-radius: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-#play-section-realisme .menu-play-container .difficulty-container .other-difficulty {
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 50px;
-  width: 30px;
-  height: 125px;
-  background-color: #DDDDDD;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-#play-section-realisme .menu-play-container .difficulty-container .other-difficulty div {
-  margin: 10px 0;
-  width: 30px;
-  height: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-#play-section-realisme .menu-play-container .difficulty-container .disabled {
-  height: 0;
-  opacity: 0;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
 #play-section-realisme .menu-play-container .score-container p {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: 300;
   color: #202020;
   margin: 0;
+}
+
+#play-section-realisme .menu-play-container .score-container p span {
+  font-weight: 700;
 }
 
 #play-section-realisme .menu-play-container .return-container div {
@@ -1584,25 +1480,6 @@ a {
   width: 100%;
   height: 80%;
   position: relative;
-}
-
-#play-section-realisme #game-container .top-gradient, #play-section-realisme #game-container .bottom-gradient {
-  width: 100%;
-  height: 90px;
-  background: -webkit-gradient(linear, left bottom, left top, from(white), to(rgba(255, 255, 255, 0)));
-  background: linear-gradient(0deg, white, rgba(255, 255, 255, 0));
-  position: absolute;
-  left: 0;
-}
-
-#play-section-realisme #game-container .top-gradient {
-  top: 0;
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-
-#play-section-realisme #game-container .bottom-gradient {
-  bottom: 0;
 }
 
 #play-section-realisme #game-container .container {
@@ -1626,11 +1503,11 @@ a {
 #play-section-realisme #game-container .container .video .top-gradient-camera, #play-section-realisme #game-container .container .video .bottom-gradient-camera {
   width: 100%;
   height: 80px;
+  z-index: 1;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0)), color-stop(white), color-stop(white), to(rgba(255, 255, 255, 0)));
   background: linear-gradient(0deg, rgba(255, 255, 255, 0), white, white, rgba(255, 255, 255, 0));
   position: absolute;
   left: 0;
-  z-index: 10;
 }
 
 #play-section-realisme #game-container .container .video .top-gradient-camera {
@@ -1660,6 +1537,124 @@ a {
 #play-section-realisme #game-container .container .video #video-container #pose-video {
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
+}
+
+#play-section-realisme #game-container .container .video #video-container .result-IA-loose {
+  -webkit-animation: end-result-loose .8s ease-in .4s;
+          animation: end-result-loose .8s ease-in .4s;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#play-section-realisme #game-container .container .video #video-container .result-IA-win {
+  -webkit-animation: end-result-win .8s ease-in .4s;
+          animation: end-result-win .8s ease-in .4s;
+  right: 50%;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+}
+
+#play-section-realisme #game-container .container .video #video-container #result-IA {
+  position: absolute;
+  top: 50%;
+  display: none;
+  z-index: 10;
+}
+
+#play-section-realisme #game-container .container .video #video-container #result-IA p {
+  font-size: 150px;
+  -webkit-animation: appear-ia-result-realisme 1s ease-in;
+          animation: appear-ia-result-realisme 1s ease-in;
+  z-index: 10;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+@-webkit-keyframes end-result-loose {
+  0% {
+    top: 50%;
+    left: 50%;
+  }
+  100% {
+    top: -100%;
+    left: -30%;
+  }
+}
+
+@keyframes end-result-loose {
+  0% {
+    top: 50%;
+    left: 50%;
+  }
+  100% {
+    top: -100%;
+    left: -30%;
+  }
+}
+
+@-webkit-keyframes end-result-win {
+  0% {
+    top: 50%;
+    right: 50%;
+  }
+  100% {
+    top: 100%;
+    right: -30%;
+  }
+}
+
+@keyframes end-result-win {
+  0% {
+    top: 50%;
+    right: 50%;
+  }
+  100% {
+    top: 100%;
+    right: -30%;
+  }
+}
+
+@-webkit-keyframes appear-ia-result-realisme {
+  0% {
+    font-size: 1000px;
+  }
+  30% {
+    font-size: 150px;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    font-size: 150px;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    font-size: 50px;
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes appear-ia-result-realisme {
+  0% {
+    font-size: 1000px;
+  }
+  30% {
+    font-size: 150px;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    font-size: 150px;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    font-size: 50px;
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 #play-section-realisme #game-container .container .video #video-container #pose-canvas {
@@ -1769,6 +1764,33 @@ a {
           animation: loader3 2s ease-in-out infinite;
 }
 
+@-webkit-keyframes loader1 {
+  0% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  20% {
+    -webkit-transform: translate(-50%, -90%);
+            transform: translate(-50%, -90%);
+  }
+  40% {
+    -webkit-transform: translate(-10%, -35%);
+            transform: translate(-10%, -35%);
+  }
+  60% {
+    -webkit-transform: translate(-80%, -20%);
+            transform: translate(-80%, -20%);
+  }
+  80% {
+    -webkit-transform: translate(-50%, -90%);
+            transform: translate(-50%, -90%);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
 @keyframes loader1 {
   0% {
     -webkit-transform: translate(-50%, -50%);
@@ -1796,6 +1818,33 @@ a {
   }
 }
 
+@-webkit-keyframes loader2 {
+  0% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  20% {
+    -webkit-transform: translate(-80%, -20%);
+            transform: translate(-80%, -20%);
+  }
+  40% {
+    -webkit-transform: translate(-50%, -90%);
+            transform: translate(-50%, -90%);
+  }
+  60% {
+    -webkit-transform: translate(-10%, -35%);
+            transform: translate(-10%, -35%);
+  }
+  80% {
+    -webkit-transform: translate(-80%, -20%);
+            transform: translate(-80%, -20%);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
 @keyframes loader2 {
   0% {
     -webkit-transform: translate(-50%, -50%);
@@ -1816,6 +1865,33 @@ a {
   80% {
     -webkit-transform: translate(-80%, -20%);
             transform: translate(-80%, -20%);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+@-webkit-keyframes loader3 {
+  0% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  20% {
+    -webkit-transform: translate(-10%, -35%);
+            transform: translate(-10%, -35%);
+  }
+  40% {
+    -webkit-transform: translate(-80%, -20%);
+            transform: translate(-80%, -20%);
+  }
+  60% {
+    -webkit-transform: translate(-50%, -90%);
+            transform: translate(-50%, -90%);
+  }
+  80% {
+    -webkit-transform: translate(-10%, -35%);
+            transform: translate(-10%, -35%);
   }
   100% {
     -webkit-transform: translate(-50%, -50%);
@@ -1865,53 +1941,57 @@ a {
 }
 
 @-webkit-keyframes typing {
-  from {
+  0% {
     width: 0;
   }
-  to {
+  80% {
     width: 100%;
   }
 }
 
 @keyframes typing {
-  from {
+  0% {
     width: 0;
   }
-  to {
+  80% {
     width: 100%;
   }
 }
 
-#play-section-realisme #game-container #machine-play, #play-section-realisme #game-container #user-play {
-  width: 150px;
-  height: 150px;
+#play-section-realisme .container-button-to-play {
   position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 15;
+  width: 100%;
+  height: 150px;
 }
 
-#play-section-realisme #game-container #machine-play {
-  top: 20%;
-  left: 20%;
-}
-
-#play-section-realisme #game-container #user-play {
-  bottom: 20%;
-  right: 20%;
-}
-
-#play-section-realisme #game-container .win {
-  font-size: 150px;
-}
-
-#play-section-realisme #game-container .loose {
-  font-size: 90px;
-}
-
-#play-section-realisme #game-container #animation-end-game {
+#play-section-realisme .container-button-to-play .position-button {
   width: 100%;
   height: 100%;
-  background-color: #FFFFFF;
+  position: relative;
+}
+
+#play-section-realisme .container-button-to-play .position-button .load-button button {
+  -webkit-animation: border .8s ease 1 forwards;
+          animation: border .8s ease 1 forwards;
+  cursor: none;
+}
+
+#play-section-realisme .container-button-to-play .position-button div {
+  opacity: .5;
+  width: 82px;
+  height: 82px;
+  overflow: hidden;
   position: absolute;
-  z-index: 10;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
+  -webkit-box-shadow: 0 0 10px #AFAFAF;
+          box-shadow: 0 0 10px #AFAFAF;
+  border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1925,158 +2005,77 @@ a {
           align-items: center;
 }
 
-#play-section-realisme #game-container #animation-end-game div {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  -webkit-animation: silde-end-game .5s;
-          animation: silde-end-game .5s;
-}
-
-#play-section-realisme #game-container #animation-end-game div p {
-  width: 100%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  position: absolute;
-  top: 53%;
-  left: 50%;
-  font-family: "Geogrotesque Cyr", sans-serif;
-  font-size: 50px;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
-  color: #FFFFFF;
-  text-shadow: #202020 1px 1px, #202020 -1px 1px, #202020 -1px -1px, #202020 1px -1px;
-  z-index: 5;
-  -webkit-transition: .5s;
-  transition: .5s;
-}
-
-#play-section-realisme #game-container #animation-end-game div::before {
-  width: 100%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  position: absolute;
-  top: 62%;
-  left: 50%;
-  font-family: "Geogrotesque Cyr", sans-serif;
-  font-size: 40px;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
-  color: #FFFFFF;
-  text-shadow: #202020 1px 1px, #202020 -1px 1px, #202020 -1px -1px, #202020 1px -1px;
-  z-index: 5;
-  content: 'You win !';
-  -webkit-transition: .5s;
-  transition: .5s;
-}
-
-#play-section-realisme #game-container #animation-end-game div::after {
-  content: 'You win !';
-  font-family: "Geogrotesque Cyr", sans-serif;
-  font-size: 60px;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
-  color: #51DBB6;
-  width: 100%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  position: absolute;
-  top: 57%;
-  left: 50%;
-  z-index: 7;
-  -webkit-transition: .5s;
-  transition: .5s;
-}
-
-@keyframes silde-end-game {
-  0% {
-    p {
-      top: 49%;
-      font-size: 60px;
-      -webkit-transition: .5s;
-      transition: .5s;
-    }
-    #play-section-realisme::after {
-      top: 57%;
-      font-size: 60px;
-      -webkit-transition: .5s;
-      transition: .5s;
-    }
-    #play-section-realisme::before {
-      top: 57%;
-      font-size: 60px;
-      -webkit-transition: .5s;
-      transition: .5s;
-    }
-  }
-  100% {
-    p {
-      top: 53%;
-      font-size: 50px;
-      -webkit-transition: .5s;
-      transition: .5s;
-    }
-    #play-section-realisme::after {
-      top: 57%;
-      font-size: 60px;
-      -webkit-transition: .5s;
-      transition: .5s;
-    }
-    #play-section-realisme::before {
-      top: 62%;
-      font-size: 40px;
-      -webkit-transition: .5s;
-      transition: .5s;
-    }
-  }
-}
-
-#play-section-realisme .container-button-to-play {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 15;
-  width: 100%;
-  height: 150px;
-}
-
-#play-section-realisme .container-button-to-play div {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-#play-section-realisme .container-button-to-play div button {
-  opacity: .5;
+#play-section-realisme .container-button-to-play .position-button div button {
   width: 80px;
   height: 80px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -100%);
-          transform: translate(-50%, -100%);
-  -webkit-box-shadow: 0 0 10px #AFAFAF;
-          box-shadow: 0 0 10px #AFAFAF;
   border-radius: 50%;
   background-color: #C5DAFC;
-  border: none;
+  border: 0;
+  position: relative;
+  overflow: hidden;
+  background: #C5DAFC;
+  -webkit-box-shadow: 40px -40px 0 2px #C5DAFC, -40px -40px 0 2px #C5DAFC, -40px 40px 0 2px #C5DAFC, 40px 40px 0 2px #C5DAFC, 0 0 0 2px #C5DAFC;
+          box-shadow: 40px -40px 0 2px #C5DAFC, -40px -40px 0 2px #C5DAFC, -40px 40px 0 2px #C5DAFC, 40px 40px 0 2px #C5DAFC, 0 0 0 2px #C5DAFC;
 }
 
-#play-section-realisme .container-button-to-play div button p {
+#play-section-realisme .container-button-to-play .position-button div button p {
   font-size: 30px;
   margin: 0;
 }
 
-#play-section-realisme .container-button-to-play div button:first-child {
+#play-section-realisme .container-button-to-play .position-button div:first-child {
   -webkit-transform: translate(-150%, -50%);
           transform: translate(-150%, -50%);
 }
 
-#play-section-realisme .container-button-to-play div button:last-child {
+#play-section-realisme .container-button-to-play .position-button div:last-child {
   -webkit-transform: translate(50%, -50%);
           transform: translate(50%, -50%);
+}
+
+@-webkit-keyframes border {
+  0% {
+    -webkit-box-shadow: 40px -40px 0 3px #C5DAFC, -40px -40px 0 3px #C5DAFC, -40px 40px 0 3px #C5DAFC, 40px 40px 0 3px #C5DAFC, 0 0 0 3px #C5DAFC;
+            box-shadow: 40px -40px 0 3px #C5DAFC, -40px -40px 0 3px #C5DAFC, -40px 40px 0 3px #C5DAFC, 40px 40px 0 3px #C5DAFC, 0 0 0 3px #C5DAFC;
+  }
+  25% {
+    -webkit-box-shadow: 0 -85px 0 3px #C5DAFC, -40px -40px 0 3px #C5DAFC, -40px 40px 0 3px #C5DAFC, 40px 40px 0 3px #C5DAFC, 0 0 0 3px #3F84F5;
+            box-shadow: 0 -85px 0 3px #C5DAFC, -40px -40px 0 3px #C5DAFC, -40px 40px 0 3px #C5DAFC, 40px 40px 0 3px #C5DAFC, 0 0 0 3px #3F84F5;
+  }
+  50% {
+    -webkit-box-shadow: 0 -85px 0 3px #C5DAFC, -85px 0px 0 3px #C5DAFC, -40px 40px 0 3px #C5DAFC, 40px 40px 0 3px #C5DAFC, 0 0 0 3px #3F84F5;
+            box-shadow: 0 -85px 0 3px #C5DAFC, -85px 0px 0 3px #C5DAFC, -40px 40px 0 3px #C5DAFC, 40px 40px 0 3px #C5DAFC, 0 0 0 3px #3F84F5;
+  }
+  75% {
+    -webkit-box-shadow: 0 -85px 0 3px #C5DAFC, -85px 0px 0 3px #C5DAFC, 0px 85px 0 3px #C5DAFC, 40px 40px 0 3px #C5DAFC, 0 0 0 3px #3F84F5;
+            box-shadow: 0 -85px 0 3px #C5DAFC, -85px 0px 0 3px #C5DAFC, 0px 85px 0 3px #C5DAFC, 40px 40px 0 3px #C5DAFC, 0 0 0 3px #3F84F5;
+  }
+  100% {
+    -webkit-box-shadow: 0 -85px 0 3px #C5DAFC, -85px 0px 0 3px #C5DAFC, 0px 85px 0 3px #C5DAFC, 120px 40px 0 3px #C5DAFC, 0 0 0 3px #3F84F5;
+            box-shadow: 0 -85px 0 3px #C5DAFC, -85px 0px 0 3px #C5DAFC, 0px 85px 0 3px #C5DAFC, 120px 40px 0 3px #C5DAFC, 0 0 0 3px #3F84F5;
+  }
+}
+
+@keyframes border {
+  0% {
+    -webkit-box-shadow: 40px -40px 0 3px #C5DAFC, -40px -40px 0 3px #C5DAFC, -40px 40px 0 3px #C5DAFC, 40px 40px 0 3px #C5DAFC, 0 0 0 3px #C5DAFC;
+            box-shadow: 40px -40px 0 3px #C5DAFC, -40px -40px 0 3px #C5DAFC, -40px 40px 0 3px #C5DAFC, 40px 40px 0 3px #C5DAFC, 0 0 0 3px #C5DAFC;
+  }
+  25% {
+    -webkit-box-shadow: 0 -85px 0 3px #C5DAFC, -40px -40px 0 3px #C5DAFC, -40px 40px 0 3px #C5DAFC, 40px 40px 0 3px #C5DAFC, 0 0 0 3px #3F84F5;
+            box-shadow: 0 -85px 0 3px #C5DAFC, -40px -40px 0 3px #C5DAFC, -40px 40px 0 3px #C5DAFC, 40px 40px 0 3px #C5DAFC, 0 0 0 3px #3F84F5;
+  }
+  50% {
+    -webkit-box-shadow: 0 -85px 0 3px #C5DAFC, -85px 0px 0 3px #C5DAFC, -40px 40px 0 3px #C5DAFC, 40px 40px 0 3px #C5DAFC, 0 0 0 3px #3F84F5;
+            box-shadow: 0 -85px 0 3px #C5DAFC, -85px 0px 0 3px #C5DAFC, -40px 40px 0 3px #C5DAFC, 40px 40px 0 3px #C5DAFC, 0 0 0 3px #3F84F5;
+  }
+  75% {
+    -webkit-box-shadow: 0 -85px 0 3px #C5DAFC, -85px 0px 0 3px #C5DAFC, 0px 85px 0 3px #C5DAFC, 40px 40px 0 3px #C5DAFC, 0 0 0 3px #3F84F5;
+            box-shadow: 0 -85px 0 3px #C5DAFC, -85px 0px 0 3px #C5DAFC, 0px 85px 0 3px #C5DAFC, 40px 40px 0 3px #C5DAFC, 0 0 0 3px #3F84F5;
+  }
+  100% {
+    -webkit-box-shadow: 0 -85px 0 3px #C5DAFC, -85px 0px 0 3px #C5DAFC, 0px 85px 0 3px #C5DAFC, 120px 40px 0 3px #C5DAFC, 0 0 0 3px #3F84F5;
+            box-shadow: 0 -85px 0 3px #C5DAFC, -85px 0px 0 3px #C5DAFC, 0px 85px 0 3px #C5DAFC, 120px 40px 0 3px #C5DAFC, 0 0 0 3px #3F84F5;
+  }
 }
 /*# sourceMappingURL=style.css.map */

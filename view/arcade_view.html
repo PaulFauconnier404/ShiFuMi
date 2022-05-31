@@ -9,7 +9,9 @@
 </head>
 <body>
     <!--JS Script-->
-    <script src="../js/arcade_mode/set_difficulty.js"></script>
+    <script src="../js/animation/set_difficulty.js"></script>
+    <script src="../js/arcade_mode/play_script.js"></script>
+    <script src="../js/CRUD_database/verif_connexion.js"></script>
 
 
     <section id="play-section">
@@ -27,7 +29,7 @@
                
             </div>
             <div class="score-container">
-                <p>👨🏻‍🦰   Vous : 2   |   L’ordinateur : 1   🖥</p>
+                <p>👨🏻‍🦰   Vous : <span id="user-score">0</span>   |   L’ordinateur : <span id="computer-score">0</span>    🖥</p>
             </div>
             <div class="return-container">
                 <a href="type_selection.html">
@@ -35,32 +37,33 @@
                 </a>
             </div>
         </div>
-        <div id="game-container" class="play-container">    
-            <!--
-            <div id="animation-end-game" class="active">
+        <div id="game-container" class="play-container">  
+            
+            <div id="animation-end-game">
                 <div>
-                    <p id="text-end-game" class="animation-active win">You win !</p>
+                    <p id="text-end-game-3">You win !</p>
+                    <p id="text-end-game-2">You win !</p>
+                    <p id="text-end-game-1">You win !</p>
                 </div>
             </div>
-            -->
 
            <div class="top-gradient"></div>
 
-            <div id="machine-play" class="loose"> 👊</div>
-            <div id="user-play" class="win"> ✋</div>
+            <div id="machine-play"> </div>
+            <div id="user-play"> </div>
 
            <div class="bottom-gradient"></div>
         </div>
 
         <div class="container-button-to-play">
             <div>
-                <button>
+                <button onclick="onPlayButton('rock')">
                     <p>👊</p>
                 </button>
-                <button>
+                <button onclick="onPlayButton('paper')">
                     <p>✋</p>
                 </button>
-                <button>
+                <button onclick="onPlayButton('scissors')">
                     <p>✌️</p>
                 </button>
             </div>

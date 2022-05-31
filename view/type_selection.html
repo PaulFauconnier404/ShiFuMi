@@ -8,11 +8,13 @@
     <title>ShiFuMi | Menu</title>
 </head>
 <body>
+    <script src="../js/CRUD_database/verif_connexion.js"></script>
+
     <section id="type-selection-page">
         <div class="account-bubble">
             <a href="">
                 <div>
-                    <p>👨🏻‍🦰</p>
+                    <p><script>(localStorage.getItem('persomoji') != '')? document.write(localStorage.getItem('persomoji')) : document.write('👨🏻‍🦰')</script></p>
                 </div>
             </a>
         </div>
@@ -21,7 +23,7 @@
            <div class="stroke-title"></div>
         </div>
         <div class="paragraph-score">
-            <p>Votre score max. est <span>86 coups 😲</span></p>
+            <p>Votre score max. est <span><script>document.write(localStorage.getItem('score'))</script> coups 😲</span></p>
         </div>
 
         <div class="container-button">

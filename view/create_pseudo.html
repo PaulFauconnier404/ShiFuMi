@@ -25,11 +25,11 @@
                 Entrez votre pseudo / mot de passe ou créez le ! <br/>
                 Tous ce passe en dessous, n'ayez pas peur ! 😁<br/>
             </p>
-            <form onsubmit="handleSubmit()">
                 <div class="input-form-container">
                     <input type="text" onkeyup="handleChangePseudo()" required id="pseudo-user" name="pseudo" />
                     <p>Votre pseudo</p>
                 </div>
+                <p id="error"></p>
                 <div class="password-container">
                     <div><input type="checkbox" onchange="handleChange(1)" /><span></span><p>1</p></div>
                     <div><input type="checkbox" onchange="handleChange(2)"/><span></span><p>2</p></div>
@@ -43,26 +43,23 @@
                 </div>
 
                 <div class="container-button">
-                    <a href="type_selection.html">
-                        <button type="submit">
-                            <p>Commençons</p>
-                        </button>
-                    </a>
+                    <button onclick="handleSubmit()" type="submit">
+                        <p>Commençons</p>
+                    </button>
                 </div>
-            </form>
         </div>
 
-        <!-- <div class="pop-up-verification">
+        <div id="pop-up-verification" class="pop-up-verification unactive">
             <h1>Êtes vous sur de vouloir créer votre compte ?</h1>
             <p>
-                Attention, vous êtes sur le oint de créer un nouveau compte ! 
+                Attention, vous êtes sur le point de créer un nouveau compte ! 
                 Êtes vous sur de ne pas en avoir déjà un ?
             </p>
             <div>
-                <button>Non, j'ai un doute ! 🤫</button>
-                <button>Oui, je suis sûr 🥳</button>
+                <button onclick="handleValid(0)">Non, j'ai un doute ! 🤫</button>
+                <button onclick="handleValid(1)">Oui, je suis sûr 🥳</button>
             </div>
-        </div> -->
+        </div>
 
     </section>
 

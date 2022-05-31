@@ -73,7 +73,10 @@
                 color: $color_grey1; 
                 
                 margin:0;
-    
+                span{
+                    font-weight:700;
+
+                }
             }
         }
         .return-container{
@@ -148,7 +151,7 @@
         }
         #user-play{
             bottom: 20%;
-            right: 20%;            
+            right: 5%;            
         }
         .win{
             font-size: 150px;
@@ -175,6 +178,7 @@
                 @include flex(center);
                 align-items: center ;
                 p{
+                    pointer-events: none;
                     font-family: $font1;
                     font-size: 30px;
                     font-weight:700;
@@ -208,127 +212,89 @@
         #animation-end-game{
             width: 100%;
             height: 100%;
-            background-color: $color_white;
-
             position: absolute;
             z-index: 10;
-
-            @include flex(center);
-            align-items: center ;
-
-
-            
+            background: radial-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
+           display: none;
 
             div{
                 position: relative;
                 width: 100%;
-                height: 100%;
-
-                animation: silde-end-game .5s;
-                
+                height: 100%;                
                 p{
                     
                     width: 100%;
                     transform: translate(-50%, -50%);
                     position: absolute;
-                    top:53%;
                     left:50%;
 
                     font-family: $font2;
-                    font-size: 50px;
                     font-weight:700;
                     text-transform: uppercase;
                     text-align: center;
                     color: $color_white;
 
-                    text-shadow: $color_grey1 1px 1px,$color_grey1 -1px 1px,$color_grey1 -1px -1px,$color_grey1 1px -1px;
                     z-index: 5;
                     
                     transition: .5s;
                 }
-                &::before{
-                    width: 100%;
-                    transform: translate(-50%, -50%);
-                    position: absolute;
-                    top:62%;
-                    left:50%;
-
-                    font-family: $font2;
-                    font-size: 40px;
-                    font-weight:700;
-                    text-transform: uppercase;
-                    text-align: center;
-                    color: $color_white;
-
-                    text-shadow: $color_grey1 1px 1px,$color_grey1 -1px 1px,$color_grey1 -1px -1px,$color_grey1 1px -1px;
-                    z-index: 5;
-                    content:'You win !';
-
-                    transition: .5s;
-                }
-                &::after{
-                    content:'You win !';
-
-                    font-family: $font2;
-                    font-size: 60px;
-                    font-weight:700;
-                    text-transform: uppercase;
-                    text-align: center;
+                .win{
                     color: #51DBB6;
-
-
-                    width: 100%;
-                    transform: translate(-50%, -50%);
-                    position: absolute;
-                    top:57%;
-                    left:50%;
-
-                    z-index: 7;
-
-                    transition: .5s;
                 }
+                .loose{
+                    color: #db5158;
+                }
+                .equality{
+                    color: #515adb;
+                }
+                #text-end-game-1{
+                    font-size: 60px;
+                    top:30%;
+                    animation: sildeEndGame 2s ease-in-out infinite;
+
+                }
+                #text-end-game-2{
+                    text-shadow: $color_grey1 1px 1px,$color_grey1 -1px 1px,$color_grey1 -1px -1px,$color_grey1 1px -1px;
+                    font-size: 50px;
+                    top:35%;
+                    animation: sildeEndGame1 1s;
+
+                }
+                #text-end-game-3{
+                    text-shadow: $color_grey1 1px 1px,$color_grey1 -1px 1px,$color_grey1 -1px -1px,$color_grey1 1px -1px;
+                    font-size: 40px;
+                    top:40%;
+                    animation: sildeEndGame2 1s;
+                }
+                   
+                
+               
+              
                
             }
-            
+            @keyframes sildeEndGame1 {
+                0%{
+                    font-size: 60px;
+                    top:30%;
+                }
+                100%{
+                    font-size: 50px;
+                    top:35%;
+                }
+            }
+            @keyframes sildeEndGame2 {
+                0%{
+                    font-size: 60px;
+                    top:30%;
+                }
+                100%{
+                    font-size: 40px;
+                    top:40%;
+                }
+            }
         }
     }
-    @keyframes silde-end-game {
-        0%{
-            p{
-                top:49%;
-                font-size: 60px;
-                transition: .5s;
-            }
-            &::after{
-                top:57%;
-                font-size: 60px;
-                transition: .5s;
-            }
-            &::before{
-                top:57%;
-                font-size: 60px;
-                transition: .5s;
-            }
-        }
-        100%{
-            p{
-                top:53%;
-                font-size: 50px;
-                transition: .5s;
-            }
-            &::after{
-                top:57%;
-                font-size: 60px;
-                transition: .5s;
-            }
-            &::before{
-                top:62%;
-                font-size: 40px;
-                transition: .5s;
-            }
-        
-        }
-    }
+    
 
     .container-button-to-play{
         position: absolute;

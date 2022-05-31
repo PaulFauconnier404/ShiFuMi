@@ -8,11 +8,15 @@
     <title>ShiFuMi | Settings</title>
 </head>
 <body>
+    <!--JS Script-->
+    <script src="../js/animation/set_persomoji.js"></script>
+    <script src="../js/CRUD_database/verif_connexion.js"></script>
+
     <section id="setting-page">
         <div class="account-bubble">
             <a href="">
-                <div>
-                    <p>👨🏻‍🦰</p>
+                <div id="persomoji-menu">
+                    <p><script>(localStorage.getItem('persomoji') != '')? document.write(localStorage.getItem('persomoji')) : document.write('👨🏻‍🦰')</script></p>
                 </div>
             </a>
         </div>
@@ -34,16 +38,16 @@
             <div class="reglage">
                 <p>👨🏻‍🦰 Mon personnage</p>
                 <div class="butto-container">
-                    <button class="active">
+                    <button id="persomiji-1" onclick="ChangePerso('1', '👨🏻‍🦰')" class="active">
                         👨🏻‍🦰
                     </button>
-                    <button>
+                    <button id="persomiji-2" onclick="ChangePerso('2', '💂🏼')">
                         💂🏼
                     </button>
-                    <button>
+                    <button id="persomiji-3" onclick="ChangePerso('3', '👩🏼‍🚀')"> 
                         👩🏼‍🚀
                     </button>
-                    <button>
+                    <button id="persomiji-4" onclick="ChangePerso('4', '👩🏻‍🦳')">
                         👩🏻‍🦳
                     </button>
                 </div>

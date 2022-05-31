@@ -6,7 +6,12 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 5000;
 
-
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
+  next();
+});
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -50,20 +55,22 @@ app.get('/api/user_data', (req,res) => {
         res.status(200).json(docs)
       }) 
   })
-  app.get('/api/user_data/:id', async (req,res) => {
-    const id = getId(req.params.id)
+  // app.get('/api/user_data/:id', async (req,res) => {
+  //   const id = getId(req.params.id)
   
-    try {
-        const docs = await db.collection('user').findOne( {_id : id} )
-        res.status(200).json(docs)
-    } catch (err) {
-        console.log(err)
-        throw err
-    }
-  })
+  //   try {
+  //       const docs = await db.collection('user').findOne( {_id : id} )
+  //       res.status(200).json(docs)
+  //   } catch (err) {
+  //       console.log(err)
+  //       throw err
+  //   }
+  // })
   
   app.get('/api/user_data/:pseudo', async (req,res) => {
     const pseudo = req.params.pseudo
+    console.log(pseudo)
+
     try {
   
         const docs = await db.collection('user').findOne( { 'pseudo' : pseudo.toString()} )
@@ -74,10 +81,12 @@ app.get('/api/user_data', (req,res) => {
     }
   })
   app.post('/api/user_data', async (req,res) => {
+
     try {
-        const interconnexionData = req.body
-        const interconnexion = await db.collection('user').insertOne(interconnexionData)
-        res.status(200).json(interconnexion)
+        const userData = req.body
+        const user = await db.collection('user').insertOne(userData)
+        res.status(200).json(user)
+
     } catch (err) {
         console.log(err)
         throw err
@@ -88,9 +97,9 @@ app.get('/api/user_data', (req,res) => {
     try {
         const id = getId(req.params.id)
   
-        const replacementInterconnexion = req.body
-        const interconnexion = await db.collection('user').replaceOne( {_id : id} ,replacementInterconnexion)
-        res.status(200).json(interconnexion)
+        const userData = req.body
+        const user = await db.collection('user').replaceOne( {_id : id} ,userData)
+        res.status(200).json(user)
     } catch (err) {
         console.log(err)
         throw err
@@ -100,9 +109,9 @@ app.get('/api/user_data', (req,res) => {
     try {
         const id = getId(req.params.id)
   
-        const replacementInterconnexion = req.body
-        const interconnexion = await db.collection('user').updateOne( {_id : id} , {$set: replacementInterconnexion}, {upsert:true})
-        res.status(200).json(interconnexion)
+        const userData = req.body
+        const user = await db.collection('user').updateOne( {_id : id} , {$set: userData}, {upsert:true})
+        res.status(200).json(user)
     } catch (err) {
         console.log(err)
         throw err
@@ -112,8 +121,8 @@ app.get('/api/user_data', (req,res) => {
     try {
         const id = getId(req.params.id)
   
-        const interconnexion = await db.collection('user').deleteOne( {_id : id} )
-        res.status(200).json(interconnexion)
+        const user = await db.collection('user').deleteOne( {_id : id} )
+        res.status(200).json(user)
     } catch (err) {
         console.log(err)
         throw err

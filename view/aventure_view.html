@@ -8,21 +8,27 @@
     <title>ShiFuMi | Mode aventurier</title>
 </head>
 <body>
+    <!--JS Script-->
+    <script src="../js/animation/set_difficulty.js"></script>
+    <script src="../js/adventure_mode/play_script.js"></script>
+    <script src="../js/CRUD_database/verif_connexion.js"></script>
+
     <section id="play-section">
         <div class="menu-play-container">
+
             <div class="difficulty-container">
-                <div class="other-difficulty disabled">
+                <div id="set-difficulty" class="other-difficulty disabled">
                     <div></div>
-                    <div>😯</div>
-                    <div>🤯</div>
+                    <div id="position-1-difficulty" onclick="setGameDifficulty(1)">😯</div>
+                    <div id="position-2-difficulty" onclick="setGameDifficulty(2)" >🤯</div>
                 </div>
-                <div class="difficulty-emojy">
+                <div id="selected-difficulty" class="difficulty-emojy" onclick="setViewDifficulty()">
                     😌
                 </div>
                
             </div>
             <div class="score-container">
-                <p>👨🏻‍🦰   Vous : 2   |   L’ordinateur : 1   🖥</p>
+                <p>👨🏻‍🦰   Vous : <span id="user-score">0</span>   |   L’ordinateur : <span id="computer-score">0</span>    🖥</p>
             </div>
             <div class="return-container">
                 <a href="type_selection.html">
@@ -30,17 +36,22 @@
                 </a>
             </div>
         </div>
-        <div class="play-container">    
+        <div id="game-container" class="play-container">    
+            <div id="animation-end-game">
+                <div>
+                    <p id="text-end-game-3">You win !</p>
+                    <p id="text-end-game-2">You win !</p>
+                    <p id="text-end-game-1">You win !</p>
+                </div>
+            </div>
+
            <div class="top-gradient"></div>
 
-            <div id="machine-play" class="loose"> 👊</div>
-            <div id="user-play" class="win"> ✋</div>
+            <div id="machine-play" class="loose"> </div>
+            <div id="user-play" class="win"> </div>
 
             <div id="container-bonus" class="active">
-                <div id="bonus-1" class="bonus">
-                    <p>👌</p>
-                    <div><p>x1</p></div>
-                </div>
+                
                
             </div>
 
@@ -49,13 +60,13 @@
 
         <div class="container-button-to-play">
             <div>
-                <button>
+                <button onclick="onPlayButton('rock')">
                     <p>👊</p>
                 </button>
-                <button>
+                <button onclick="onPlayButton('paper')">
                     <p>✋</p>
                 </button>
-                <button>
+                <button onclick="onPlayButton('scissors')">
                     <p>✌️</p>
                 </button>
             </div>

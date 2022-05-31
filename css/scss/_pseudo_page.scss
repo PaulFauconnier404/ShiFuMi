@@ -140,8 +140,19 @@
             @include blue_button;
         }
     }
+
+    .unactive{
+        display: none !important;
+    }
+    #error{
+        font-family: $font1;
+        font-size: 14px;
+        font-weight: 200;
+        color: $color_grey1;  
+    }
    
     .pop-up-verification{
+        display: block;
         position: absolute;
         top:50%;
         left:50%;
