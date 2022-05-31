@@ -2,6 +2,7 @@
   "name": "shifumi",
   "version": "1.0.0",
   "scripts": {
+    "start": "node index.js",
     "client": "cd client && yarn start",
     "server": "nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
@@ -12,7 +13,9 @@
     "cors": "^2.8.5",
     "dotenv": "^14.3.2",
     "express": "^4.17.2",
+    "fs": "^0.0.1-security",
     "helmet": "^5.0.2",
+    "http": "^0.0.1-security",
     "mongodb": "^4.3.1",
     "mongoose": "^6.1.8"
   },
