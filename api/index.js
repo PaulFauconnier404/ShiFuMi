@@ -30,14 +30,14 @@ function getId(idRequested){
   
     return good_id;
   }
-
-
+  
 //DATABASE CONNECTION
 const MongoClient = require('mongodb').MongoClient;
-const url = 'mongodb://127.0.0.1:27017';
-const dbName = 'shifumi';
+const url = 'mongodb+srv://Cnam:Cnam2022@darterking.my4fuyt.mongodb.net/?retryWrites=true&w=majority';
+const dbName = 'Shifumi';
 let db
  
+
 MongoClient.connect(url, function(err, client) {
   db = client.db(dbName);
   console.log("Connected successfully to server");

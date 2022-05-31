@@ -38,6 +38,35 @@ async function handleSubmit() {
 
 }
 
+function handleValid(value) {
+    if (value == 0) {
+        document.getElementById('pop-up-verification').classList.add('unactive')
+    } else {
+        fetch('http://127.0.0.1:5000/api/user_data', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+
+                pseudo: pseudo,
+                password: password_request,
+                score: 0,
+                bonus: 0,
+                last_connection: new Date()
+            }),
+        })
+            .then((res) => {
+                return res.json();
+            })
+            .then((data) => console.log(data));
+
+            
+        window.location = "/view/type_selection.html"
+    }
+
+}
+
 async function getUsers(pseudo) {
     localStorage.setItem('connected',pseudo)
 
